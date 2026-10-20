@@ -3,6 +3,7 @@ package problem5;
 import java.util.LinkedList;
 
 public class BookStack {
+    /*
     private LinkedList<Book> stack;
 
     public BookStack() {
@@ -28,6 +29,6 @@ public class BookStack {
     public void display() {
         System.out.println("Stack contents (top to bottom):");
 
-    }
+    }*/
 }
 
