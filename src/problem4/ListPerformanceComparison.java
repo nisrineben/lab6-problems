@@ -70,12 +70,15 @@ public class ListPerformanceComparison {
 
     private static void testRandomAccess(List<Integer> list, String name) {
         Random random = new Random();
-        long start = System.nanoTime();
 
+        List<Integer> indexes = new ArrayList<>();
+        for (int i = 0; i < list.size(); i++) indexes.add(i);
+        Collections.shuffle(indexes, new Random(42));
+        long start = System.nanoTime();
         long sum = 0;
         // sum of the all elements in the list
-        for(int s:list){
-            sum+=s;
+        for (int idx : indexes) {
+            sum += list.get(idx);
         }
 
         long end = System.nanoTime();

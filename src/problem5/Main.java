@@ -10,31 +10,24 @@ public class Main {
             Book cleanCode =
                     new Book("Clean Code", "Robert C. Martin", 2008);
 
-            // ========== STACK TEST ==========
+            //STACK
             System.out.println("=== Stack Test ===");
 
-            BookStack stack = new BookStack();
-
+            BookStack stack=new BookStack();
             stack.push(hobbit);
             stack.push(nineteenEightyFour);
             stack.push(cleanCode);
-
+            stack.display();
+            System.out.println("Popped: "+stack.pop());
+            System.out.println("Top: "+stack.peek());
             stack.display();
 
-            System.out.println("Popped: " + stack.pop());
-            System.out.println("Top: " + stack.peek());
-
-            stack.display();
-
-            // ========== QUEUE TEST ==========
+            //QUEUE
             System.out.println("=== Queue Test ===");
-
             BookQueue queue = new BookQueue();
-
             queue.enqueue(hobbit);
             queue.enqueue(nineteenEightyFour);
             queue.enqueue(cleanCode);
-
             queue.display();
         }
     }
