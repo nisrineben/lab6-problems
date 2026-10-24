@@ -3,9 +3,16 @@ package problem3;
 public class Magazine extends Document{
     private String month;
     private int year;
-    public Magazine(int numRec, String title,String month,int year,Library library) {
-        super(numRec, title, library);
+    public Magazine( String title,String month,int year,Library library) {
+        super( title, library);
         this.month=month;
         this.year=year;
     }
+    @Override
+    public String toString() {
+        return super.toString()
+                + ", Month: " + month
+                + ", Year: " + year;
+    }
+
 }

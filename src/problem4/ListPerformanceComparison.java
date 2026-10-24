@@ -17,8 +17,8 @@ public class ListPerformanceComparison {
 
         System.out.println("---- Populate both lists ----");
         for (int i = 0; i < SIZE; i++) {
-            //code here
-            //code here
+            arrayList.add(i);
+            linkedList.add(i);
         }
 
         // 2️⃣ Random insertions and deletions
@@ -40,7 +40,7 @@ public class ListPerformanceComparison {
         Random random = new Random();
         long start = System.nanoTime();
 
-        // insert your code here
+        list.remove(random);
 
         long end = System.nanoTime();
         System.out.printf("%s - Random insert/delete: %.3f ms%n",
@@ -54,11 +54,12 @@ public class ListPerformanceComparison {
 
         // Insertions at beginning and end
 
-        // add your code here
-
+        list.add(0,3);
+        list.add(list.size(),3);
         // Deletions at beginning and end
+        list.remove(0);
+        list.remove(list.size()-1);
 
-        // add your code here
 
         long end = System.nanoTime();
         System.out.printf("%s - Sequential insert/delete (start/end): %.3f ms%n",
@@ -73,7 +74,9 @@ public class ListPerformanceComparison {
 
         long sum = 0;
         // sum of the all elements in the list
-       // insert your code here
+        for(int s:list){
+            sum+=s;
+        }
 
         long end = System.nanoTime();
         System.out.printf("%s - Random access (get): %.3f ms%n",

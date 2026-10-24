@@ -8,7 +8,11 @@ public class Book extends Document{
         this.author=author;
         this.nbrPages=nbrPages;
     }
-
-    public Book() {
+    @Override
+    public String toString() {
+        return super.toString()
+                + ", Author: " + author
+                + ", Number of pages: " + nbrPages;
     }
+
 }

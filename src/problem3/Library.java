@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Library {
     private int capacity;
-    ArrayList<Document> documents;
+    ArrayList<Document> documents=new ArrayList<>(capacity);
     Library(int capacity){
         this.capacity=capacity;
     }
@@ -27,14 +27,36 @@ public class Library {
         return false;
     }
     boolean delete(Document doc){
-        if(!find(doc)){
+        if(find(doc)){
             documents.remove(doc);
             return true;
         }
         return false;
     }
     Document document(int numEnrg){
-        return Document(numEnrg)
+        return documents.get(numEnrg);
     }
-    void displayAuthor(){}
+    void displayAuthor(){
+        for(Document doc:documents){
+            if(doc instanceof Book book){
+                System.out.println(book.author);
+            }
+        }
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Library capacity: ").append(capacity).append("\n");
+        sb.append("Documents:\n");
+
+        for (Document doc:documents) {
+            if (doc!= null) {
+                sb.append(doc.toString()).append("\n");
+            }
+        }
+
+        return sb.toString();
+    }
 }
